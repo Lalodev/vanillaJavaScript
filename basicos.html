@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos JavaScript</title>
+</head>
+<h1>Fundamentos de JavaScript</h1>
+
+<script>
+    /*3
+    //Variables
+    var hola = "Hola Mundo";
+    let hello = "Hello World";
+    console.log(hola);
+    console.log(hello);
+    console.log(window);
+    console.log(window.hola);
+    console.log(window.hello);
+    //Ambito de bloque
+    var musica = "Rock";
+    console.log("Variable Música antes del Bloque", musica);
+    {
+        var musica = "Pop";
+        console.log("Variable Música dentro del Bloque", musica);
+    }
+    console.log("Variable Música despues del Bloque", musica);
+    console.log("---------------------------------------");
+    let music = "Rock";
+    console.log("Variable Música antes del Bloque", music);
+    {
+        var music2 = "Pop";
+        console.log("Variable Música dentro del Bloque", music2);
+    }
+    console.log("Variable Música despues del Bloque", music);
+    */
+
+
+
+    /*4
+    //let y const
+    let a;
+    const PI = 3.1416;
+    //const NUEVE;
+    console.log(PI);
+    //PI = 22;
+
+    a = "Colocho";
+    console.log(a);
+
+    const objeto = {
+        nombre: "Lalo",
+        edad: 33
+    }
+
+    const colores = ["blanco", "negro", "azul"];
+
+    console.log(objeto);
+    console.log(colores);
+
+    objeto.correo = "correo@correo.com";
+    colores.push("anaranjado");
+
+    console.log(objeto);
+    console.log(colores);
+    */
+
+
+
+    /*5
+    //Cadenas de Texto (Strings)
+    let nombre = "Jon";
+    let apellido = "Mircha";
+    let saludo = new String("Hola Mundo");
+    let lorem = "   Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem quod quas esse expedita vel nisi saepe. Vel quo corrupti voluptatibus quaerat repellat velit non iure obcaecati error, exercitationem sint unde.";
+
+    console.log(nombre, apellido, saludo);
+    console.log(nombre.length,
+        apellido.length,
+        saludo.length,
+        nombre.toLowerCase(),
+        apellido.toUpperCase(),
+        lorem.includes("amet"),
+        lorem.includes("lalo"),
+        lorem,
+        lorem.trim(),
+        lorem.split(" "),
+        lorem.split(",")
+    );
+    */
+
+
+
+    /*6
+    //Template String - Interpolación
+    let nombre = "Jon";
+    let apellido = "Mircha";
+
+    //Concatenación
+    let saludo = "Hola mi nombre es " + nombre + " " + apellido + ".";
+
+    console.log(saludo);
+
+    //Interpolación
+    let saludo2 = `Hola mi nombre es ${nombre} ${apellido}.`;
+    console.log(saludo2);
+
+    let ul = "< ul ><li>Primavera</li><li>Verano</li><li>Otoño</li><li>Invierno</li></ul >";
+
+    console.log(ul);
+
+    let ul2 = `<ul>
+    <li>Primavera</li>
+    <li>Verano</li>
+    <li>Otoño</li>
+    <li>Invierno</li>
+    </ul>`;
+
+    console.log(ul2);
+
+    let ul3 = "<ul>";
+    ul3 += "<li>Primavera</li>";
+    ul3 += "<li>Verano</li>";
+    ul3 += "<li>Otoño</li>";
+    ul3 += "<li>Invierno</li>";
+    ul3 += "</ul > ";
+
+    console.log(ul3);
+    */
+
+
+
+    /*7
+    //Numeros
+    let a = 2;
+    let b = new Number(1);
+    let c = 7.19;
+    let d = "5.6";
+
+    console.log(a, b);
+    console.log(c.toFixed(1));
+    console.log(c.toFixed(5));
+    console.log(parseInt(c));
+    console.log(parseFloat(c));
+    console.log(typeof c, typeof d);
+    console.log(typeof (a));
+    console.log(a + b);
+    console.log(c + d);
+    console.log(c + parseInt(d));
+    console.log(c + parseFloat(d));
+    console.log(c + Number.parseInt(d));
+    console.log(c + Number.parseFloat(d));
+    */
+
+
+
+    /*8
+    //Booleanos
+    let verdadero = true;
+    let falso = false;
+    let v = Boolean(true);
+    let f = Boolean(false);
+
+    console.log(verdadero, falso);
+    console.log(typeof verdadero, typeof (falso));
+    console.log(Boolean(0));
+    console.log(Boolean(""));
+    console.log(Boolean(" "));
+    */
+
+
+
+    /*9
+    //Undefined, Null, NaN (Not a Number)
+
+    let indefinida;
+    let nulo = null;
+    
+    console.log(indefinida);
+    console.log(nulo);
+    
+    let noNumber = "hola"*3.7;
+    
+    console.log(noNumber);    
+    */
+
+
+
+    /*10
+    //Funciones
+    //Función Declarada
+    function funcionDeclarada() {
+        console.log("Uno");
+        console.log("Dos");
+        console.log("Tres");
+    }
+
+    //Invocación de Funciones
+    funcionDeclarada();
+    funcionDeclarada();
+    funcionDeclarada();
+
+    function returnFunction() {
+        console.log("Uno");
+        //return 19;
+        console.log("Dos");
+        console.log("Tres");
+        return "Mensaje de retorno";
+    }
+
+    //let valorDeFuncion = returnFunction();
+    //console.log(valorDeFuncion);
+
+    //Parametros
+    function saludar(nombre, edad) {
+        console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`);
+    }
+
+    // saludar("Colocho", 8);
+    //saludar();
+
+    function saludar2(nombre = "Desconocido", edad = 0) {
+        console.log(`Hola mi nombre es ${nombre} y tengo ${edad} años`);
+    }
+
+    //saludar2();
+
+    //Funciones Declaradas VS Funciones Expresadas
+
+    funcionDeclarada2();
+
+    function funcionDeclarada2() {
+        console.log("Esto es una función declarada, puede invocarse en cualquier parte de nuestro código, incluso antes de que la función sea declarada ");
+    }
+
+    funcionDeclarada2();
+
+    //Función Anónima
+
+    //funcionExpresada();
+
+    const funcionExpresada = function () {
+        console.log("Esto es una función expresada, es decir una función que se le ha asignado como valor a una variable, sí invocamos esta función antes de su definición javascript nos dirá: Uncaught ReferenceError: Cannot access funcionExpresada before initialization");
+    }
+
+    funcionExpresada();
+    */
+
+
+
+    /*11
+    //Arreglos
+    const a = [];
+    const b = [1, true, "Hola", ["A", "B", "C", [1, 2, 3]]];
+    console.log(a);
+    console.log(b);
+    console.log(b.length);
+    console.log(b[2]);
+    console.log(b[3]);
+    console.log(b[3][2]);
+    console.log(b[3][3][0]);
+
+    const c = Array.of("X", "Y", "Z", 9, 8, 7);
+    console.log(c);
+
+    const d = Array(100).fill(false);
+    console.log(d);
+
+    //Ya no se usa
+    const e = new Array();
+    console.log(e);
+    const f = new Array(1, 2, 3, true, false);
+    console.log(f);
+    //
+
+    const colores = ["Rojo", "Verde", "Azul"];
+    console.log(colores);
+
+    colores.push("Negro");
+    console.log(colores);
+
+    colores.pop();
+    console.log(colores);
+
+    colores.forEach(function (el, index) {
+        console.log(`<li id="${index}">${el}</li>`);
+    });
+    */
+
+
+
+    /*12
+    //Objetos
+    let a = new String("Hola");
+    console.log(a);
+
+    const b = {}
+    console.log(b);
+
+    //Ya casi no se usa
+    const c = new Object();
+    console.log(c);
+
+    //Dentro de un objeto, a las variables se les llamarán ATRIBUTOS y a las funciones se les llaman METODOS
+    const jon = {
+        nombre: "Jon",
+        apellido: "MirCha",
+        edad: 35,
+        pasatiempos: ["Correr", "Hacer ejercicio", "Dar clases"],
+        soltero: false,
+        contacto: {
+            email: "jonmircha@gmail.com",
+            twitter: "@jonmircha",
+            movil: "3154654654"
+        },
+        saludar: function () {
+            console.log(`Hola :)`)
+        },
+        decirMiNombre: function () {
+            console.log(`Hola me llamo ${this.nombre} ${this.apellido} y tengo ${this.edad} años y me puedes seguir como ${this.contacto.twitter} en twitter.`);
+        }
+    }
+
+    //Si, pero no
+    console.log(jon);
+    console.log(jon["nombre"]);
+    console.log(jon["apellido"]);
+
+    //Correcto
+    console.log(jon.nombre);
+    console.log(jon.apellido);
+    console.log(jon.edad);
+    console.log(jon.soltero);
+    console.log(jon.pasatiempos);
+    console.log(jon.pasatiempos[1]);
+    console.log(jon.contacto);
+    console.log(jon.contacto.twitter);
+
+    jon.saludar();
+    jon.decirMiNombre();
+
+    console.log(Object.keys(jon));
+    console.log(Object.values(jon));
+    console.log(jon.hasOwnProperty("nombre"));
+    console.log(jon.hasOwnProperty("nacimiento"));
+    */
+
+
+    /*13
+    //Tipos de Operadores
+    //Aritmeticos
+    let a = 5 + 5 - 10 * 3;
+    let modulo = 5 % 2;
+
+    console.log(a);
+    console.log(modulo);
+
+    //Relacionales >, <, >=, <= ==, ===, !=, !===
+    console.log(8 > 9);
+    console.log(9 > 8);
+    console.log(8 >= 9);
+    console.log(9 >= 8);
+    console.log(7 < 7);
+    console.log(7 <= 7);
+
+    // = asignación
+    // == igualdad de valores
+    // === igualdad de valores y tipos de datos
+
+    console.log("---------------");
+    console.log(7 == 7);
+    console.log("7" == 7);
+    console.log(0 == false);
+    console.log("---------------");
+    console.log(7 === 7);
+    console.log("7" === 7);
+    console.log(0 === false);
+
+    console.log("-------------");
+    //Incremento y Decremento
+    let i = 1;
+    //i = i + 2;
+    //i += 3;
+    console.log(i);
+    //Unario
+    i++;
+    i--;
+    ++i;
+    --i;
+    console.log(i);
+
+    //lógicos
+    // ! - Not
+    // || - Or
+    // && - And
+    */
+
+
+    /*14
+    //Condicionales
+    let edad = 17;
+    if (edad > 17) {
+        console.log("Eres mayor de Edad");
+    } else {
+        console.log("Eres menor de Edad");
+    }
+
+    if (edad >= 18) {
+        console.log("Eres mayor de Edad");
+    } else {
+        console.log("Eres menor de Edad");
+    }
+    console.log("------------");
+
+    let hora = 6;
+    if (hora >= 0 && hora <= 5) {
+        console.log("Déjame dormir");
+    } else if (hora >= 6 && hora <= 11) {
+        console.log("Buenos dias");
+    } else if (hora >= 12 && hora <= 18) {
+        console.log("Buenas tardes");
+    } else {
+        console.log("Buenas noches");
+    }
+
+    //Operador Ternario (condición) ? verdadero : falso
+    let eresMayor = (edad >= 18)
+        ? "Mayor de Edad"
+        : "Menor de Edad";
+
+    console.log(eresMayor);
+
+    //switch - case
+    let dia = 5;
+    switch (dia) {
+        case 0: console.log("Domingo"); break;
+        case 1: console.log("Lunes"); break;
+        case 2: console.log("Martes"); break;
+        case 3: console.log("Miercoles"); break;
+        case 4: console.log("Jueves"); break;
+        case 5: console.log("Viernes"); break;
+        case 6: console.log("Sabado"); break;
+        default: console.log("No existe este día"); break;
+    }
+    */
+
+
+
+    /*15
+    //Ciclos (Loops)
+
+    //while
+    let contador = 0;
+
+    while (contador != 10) {
+        console.log("while " + contador);
+        contador++;
+    }
+
+    //do-while
+    let contador2 = 0;
+    do {
+        console.log("do-while " + contador2);
+        contador2++;
+    } while (contador2 != 10);
+
+    //for
+    for (let i = 0; i < 10; i++) {
+        console.log("for " + i);
+    }
+
+    let numeros = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+    for (let a = 0; a < numeros.length; a++) {
+        console.log(numeros[a]);
+    }
+
+    const jon = {
+        nombre: "Jon",
+        apellido: "MirCha",
+        edad: 35
+    }
+
+    //Más para objetos
+    for (const propiedad in jon) {
+        console.log(`key: ${propiedad}, value: ${jon[propiedad]}`);
+    }
+
+    //Más para arreglos y objetos iterables (strings)
+    for (const elemento of numeros) {
+        console.log(elemento);
+    }
+
+    let cadena = "Hola mundo";
+    for (const caracter of cadena) {
+        console.log(caracter);
+    }
+    */
+
+
+
+    /*16
+    //Manejo de Errores
+    try {
+        console.log("En el try se agrega el código a evaluar");
+        noExiste;
+        console.log("Segundo mensaje en el try");
+    } catch (error) {
+        console.log("Catch, captura cualquier valor surgido o lanzado en el try");
+        console.log(error);
+    } finally {
+        console.log("El bloque finally se ejecutará siempre al final de un bloque try-catch");
+    }
+
+    console.log("----------------");
+    try {
+        let numero = y;
+        if (isNaN(numero)) {
+            throw new Error("El caracter introducido no es un número");
+        }
+        console.log(numero * numero);
+    } catch (error) {
+        console.log("Se produjo el siguiente error: ${error}");
+    }
+    */
+
+
+
+    /*17
+    //Break & Continue
+    const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+
+    for (let i = 0; i < numeros.length; i++) {
+        //if (i == 5) {
+        //    break;
+        // }
+
+        if (i == 5) {
+            continue;
+        }
+        console.log(numeros[i]);
+    }
+
+    console.log("---------------------");
+    for (let i = 0; i < 10; i++) {
+
+        let num = i % 2;
+        if (num != 0) {
+            console.log(i);
+        }
+    }
+    */
+
+
+
+    /*18
+    //Destructuración
+    const numeros = [1, 2, 3];
+
+    //Sin destructuración
+    let uno = numeros[0],
+        dos = numeros[1],
+        tres = numeros[2];
+
+    console.log(uno, dos, tres);
+
+    //Con destructuración
+    const [one, two, three] = numeros;
+
+    console.log(one, two, three);
+
+    let persona = {
+        nombre: "Jon",
+        apellido: "MirCha",
+        edad: 35
+    }
+
+    //El orden de las variables no afecta 
+    let { nombre, edad, apellido } = persona;
+    //let { nombre, apellido, edad } = persona;
+    console.log(nombre, apellido, edad);
+    */
+
+
+
+    /*19
+    //Objetos literales
+    //Cuando el valor y la propiedad se llaman igual, se simplifica
+    let nombre = "Kenai";
+    let edad = 7;
+
+    const perro = {
+        nombre: nombre,
+        edad: edad,
+        ladrar: function () {
+            console.log("guaaa guaaa");
+        }
+    }
+
+    console.log(perro);
+    perro.ladrar();
+
+    const dog = {
+        nombre,
+        edad,
+        raza: "Callejero",
+        ladrar() {
+            console.log("guaaa guaaa guaaa");
+        }
+    }
+
+    console.log(dog);
+    dog.ladrar();
+    */
+
+
+
+    /*20
+    //Parametros REST & Operador Spread
+
+    //REST
+    function sumar(a, b, ...c) {
+        let resultado = a + b;
+
+        c.forEach(function (n) {
+            resultado += n;
+        });
+
+        return resultado;
+    }
+
+    console.log(sumar(1, 2));
+    console.log(sumar(1, 2, 3));
+    console.log(sumar(1, 2, 3, 4));
+    console.log(sumar(1, 2, 3, 4, 5));
+    console.log(sumar(1, 2, 3, 4, 5, 6));
+    console.log(sumar(1, 2, 3, 4, 5, 6, 7));
+
+    //Spread Operator
+    const arr1 = [1, 2, 3, 4, 5];
+    const arr2 = [6, 7, 8, 9, 0];
+
+    console.log(arr1, arr2);
+
+    //const arr3 = [arr1, arr2];
+    const arr3 = [...arr1, ...arr2];
+
+    console.log(arr3);
+    */
+
+
+
+    /*21
+    //Arrow Functions
+    const saludar = () => console.log(`Hola`);
+    saludar();
+
+    const saludar = nombre => console.log(`Hola ${nombre}`);
+
+    saludar("Irma");
+
+    const sumar = function (a, b) {
+        return a + b;
+    }
+
+    const sumar = (a, b) => a + b;
+    console.log(sumar(5, 5));
+
+    const funcionDeVariasLineas = () => {
+        console.log(`Uno`);
+        console.log(`Dos`);
+        console.log(`Tres`);
+    }
+
+    funcionDeVariasLineas();
+
+    const numeros = [1, 2, 3, 4, 5];
+
+    numeros.forEach(function (el, index) {
+        console.log(`El elemento ${el} esta en laposición ${index}`)
+    });
+
+    numeros.forEach((el, index) => {
+        console.log(`El elemento ${el} esta en la posición ${index}`)
+    });
+
+    numeros.forEach((el, index) => console.log(`El elemento ${el} esta en la posición ${index}`));
+
+    function perro() {
+        console.log(this);
+    }
+    perro();
+
+    const perro = {
+        nombre: "Kenai",
+        ladrar() {
+            console.log(this);
+        }
+    }
+
+    perro.ladrar();
+    */
+
+    /*22
+    //Prototipos
+
+    //POO
+
+
+    //Clases -  Modelo a seguir
+    //Objetos - Es una instancia de una clase
+    //Atributos - Es una característica o propiedad del objeto (son variables dentro de un  objeto)
+    //Métodos - son las acciones que un objeto puede realizar (son funciones dentro de un objeto)
+
+
+    /*const animal = {
+        nombre: "Snoopy",
+        sonar() {
+            console.log("Hago sonidos...");
+        }
+    }
+
+    const animal2 = {
+        nombre: "Lola Bunny",
+        sonar() {
+            console.log("Hago sonidos...");
+        }
+    }
+
+    //animal.sonar();
+    //console.log(animal);
+    //console.log(animal2);
+
+    //Función Constructora
+    /*function Animal(nombre, genero) {
+        //Atributos
+        this.nombre = nombre;
+        this.genero = genero;
+        //Métodos
+        this.sonar = function () {
+            console.log("Hago sonidos");
+        }
+
+        this.saludar = function () {
+            console.log(`Hola! Me llamo ${this.nombre}`);
+        }
+    }
+
+    //Función Constructora, donde asignamos los metodos al prototipo, no a la función como tal
+    function Animal(nombre, genero) {
+        //Atributos
+        this.nombre = nombre;
+        this.genero = genero;
+    }
+
+    //Métodos agregados al prototipo de la función constructora 
+    Animal.prototype.sonar = function () {
+        console.log("Hago sonidos");
+    }
+
+    Animal.prototype.saludar = function () {
+        console.log(`Hola! Me llamo ${this.nombre}`);
+    }
+
+    //23
+    //Herencia Prototípica
+    function Perro(nombre, genero, tamanio) {
+        this.super = Animal;
+        this.super(nombre, genero);
+        this.tamanio = tamanio;
+    }
+
+    //Perro está heredando de Animal
+    Perro.prototype = new Animal();
+    Perro.prototype.constructor = Perro;
+
+    //Sobreescritura de métodos del Prototipo padre en el hijo
+    Perro.prototype.sonar = function () {
+        console.log(`Soy un perro y mi sonido es un ladrido`);
+    }
+
+    Perro.prototype.ladrar = function () {
+        console.log("Guauuu Guauuu");
+    }
+
+    const snoopy = new Perro("Snoopy", "Macho", "Mediano"),
+        lolaBunny = new Animal("Lola Bunny", "Hembra");
+
+    console.log(snoopy);
+    console.log(lolaBunny);
+
+    snoopy.sonar();
+    snoopy.saludar();
+
+    lolaBunny.sonar();
+    lolaBunny.saludar();
+    */
+
+
+
+    /*24
+    //Clases
+    class Animal {
+        constructor(nombre, genero) {
+            this.nombre = nombre;
+            this.genero = genero;
+        }
+
+        sonar() {
+            console.log("Hago sonidos porque estoy vivo");
+        }
+
+        saludar() {
+            console.log(`Hola me llamo ${this.nombre}`);
+        }
+    }
+
+    class Perro extends Animal {
+        constructor(nombre, genero, tamanio) {
+            //manda a llamar el constructor de la clase padre
+            super(nombre, genero);
+            this.tamanio = tamanio;
+            this.raza = null;
+        }
+
+        sonar() {
+            console.log("Soy un perro y mi sonido es un ladrido");
+        }
+
+        ladrar() {
+            console.log("Guauuu Guauuu");
+        }
+
+        static queEres() {
+            console.log("Los perros somos animales mamíferos que pertenecen a la familia de los caninos. Somos considerados los mejores amigos del hombre");
+        }
+
+        //Los setters y getters son métodos especiales que nos permiten establecer y obtener los valores de atributos de nuestra clase
+
+        set setRaza(raza) {
+            this.raza = raza;
+        }
+
+        get getRaza() {
+            return this.raza;
+        }
+
+    }
+
+    Perro.queEres();
+
+    const mimi = new Animal("Mimi", "Hembra"),
+        scooby = new Perro("Scooby", "Macho", "Gigante");
+
+    console.log(mimi);
+    console.log(scooby);
+
+    mimi.saludar();
+    mimi.sonar();
+
+    scooby.saludar();
+    scooby.sonar();
+    scooby.ladrar();
+
+    console.log("---------------------------");
+    console.log(scooby.getRaza);
+    scooby.setRaza = "Grán Danés";
+    console.log(scooby.getRaza);
+    */
+
+    /*25*/
+    //Métodos estáticos, getters y setters
+
+    /*26
+    //Objeto Console
+    console.log(console);
+    console.error("Esto es un error");
+    console.warn("Esto es un aviso");
+    console.info("Esto es un mensaje informativo");
+    console.log("Un registro de lo que ha pasado en nuestra aplicación");
+
+    let nombre = "Jon", apellido = "MirCha", edad = 35;
+
+    console.log(nombre);
+    console.log(apellido);
+    console.log(edad);
+    console.log(nombre, apellido, edad);
+    console.log(`Hola mi nombre es ${nombre} ${apellido} y tengo ${edad} años`);
+
+    console.log(`Hola mi nombre es %s %s y tengo %d años`, nombre, apellido, edad);
+
+    console.clear();
+
+    console.log(window)
+    console.log(document);
+    console.dir(window);
+    console.dir(document);
+
+    console.clear();
+
+    console.group("Cursos de @jonmircha en You Tube");
+    console.log("Curso de JavaScript");
+    console.log("Curso de Node.js");
+    console.log("Curso de PWAs");
+    console.log("Curso de Flexbox");
+    console.log("Curso de Diseño y Programación Web");
+    console.groupEnd();
+
+    console.groupCollapsed("Cursos de @jonmircha en You Tube");
+    console.log("Curso de JavaScript");
+    console.log("Curso de Node.js");
+    console.log("Curso de PWAs");
+    console.log("Curso de Flexbox");
+    console.log("Curso de Diseño y Programación Web");
+    console.groupEnd();
+
+    console.clear();
+
+    console.table(Object.entries(console).sort());
+
+    const numeros = [1, 2, 3, 4, 5], vocales = ["a", "e", "i", "o", "u"];
+
+    console.table(numeros);
+    console.table(vocales);
+
+    const perro = {
+        nombre: "Boni",
+        raza: "Boxer",
+        color: "cafe"
+    }
+
+    console.table(perro);
+
+    console.clear();
+
+    console.time("Cuanto tiempo tarda mi código");
+    const arreglo = Array(1000000);
+
+    for (let i = 0; i < arreglo.length; i++) {
+        arreglo[i] = i;
+    }
+
+    console.timeEnd("Cuanto tiempo tarda mi código");
+
+    //console.log(arreglo);
+
+    console.clear();
+
+    for (let i = 0; i < 100; i++) {
+        console.count("código for")
+        console.log(i);
+    }
+
+    console.clear();
+
+    let x = 1;
+    let y = 2;
+    let pruebaXY = "Se espera que X siempre sea menor que Y";
+
+    console.assert(x < y, { x, y, pruebaXY });
+
+    console.clear();
+    */
+
+
+
+    /*27
+    //Objeto Date
+    console.log(Date());
+
+    let fecha = new Date();
+    console.log(fecha);
+    //día del mes
+    console.log(fecha.getDate());
+    //día de la semana D L M Mi J V S -> 0 1 2 3 4 5 6
+    console.log(fecha.getDay());
+    //mes Ene Feb Mar Abr May Jun Jul Ago Sep Oct Nov Dic -> 0 1 2 3 4 5 6 7 8 9 10 11
+    console.log(fecha.getMonth());
+    console.log(fecha.getFullYear());
+    console.log(fecha.getHours());
+    console.log(fecha.getMinutes());
+    console.log(fecha.getSeconds());
+    console.log(fecha.getMilliseconds());
+    console.log(fecha.toString());
+    console.log(fecha.toDateString());
+    console.log(fecha.toLocaleString());
+    console.log(fecha.toLocaleDateString());
+    console.log(fecha.toLocaleTimeString());
+    console.log(fecha.getTimezoneOffset());
+    console.log(fecha.getUTCDate());
+    console.log(fecha.getUTCHours());
+    console.log(Date.now()); //Cuantos segundos han pasado desde el primero de enero de 1970 (fecha timestamp)
+    //libreria moment.js
+    let cumpleJon = new Date(1987, 11, 28);
+    console.log(cumpleJon);
+   */
+
+
+
+    /*28
+    //Objeto Math
+    console.log(Math);
+    console.log(Math.PI);
+    //console.table(Math);
+    console.log(Math.abs(-7.8));
+    //Al siguiente valor
+    console.log(Math.ceil(7.8));
+    console.log(Math.ceil(7.2));
+    //Al valor anterior
+    console.log(Math.floor(7.8));
+    console.log(Math.floor(7.2));
+
+    console.log(Math.round(7.51));
+    console.log(Math.sqrt(81));
+    console.log(Math.pow(2, 5));
+
+    //Devuelve 
+    console.log(Math.sign(-7.8)); //-1
+    console.log(Math.sign(0)); //0
+    console.log(Math.sign(5)); //1
+
+    //devuelve entre 0 y 1
+    console.log(Math.random());
+
+    console.log(Math.random() * 1000);
+    console.log(Math.round(Math.random() * 1000));
+    */
+
+
+
+    /*29
+    //Operador Circuito
+
+    //OR - cuando el valor de la izquierda en la expresión siempre pueda validar a true, es el valor que se cargaràápordefecto
+
+    //AND - cuando el valor de la izquierda en la expresión siempre pueda validar a false, es el valor que se cargará por defecto
+
+    //Ahora
+    function saludar(nombre = "Desconocido") {
+        console.log(`Hola ${nombre}`);
+    }
+    saludar("Jon");
+    saludar();
+
+    console.log("------------");
+
+    //Antes
+    function saludar2(nombre) {
+        nombre = nombre || "Desconocido2";
+        console.log(`Hola ${nombre}`);
+    }
+    saludar2("Jon2");
+    saludar2();
+
+    //OR
+    console.log("--- OR ---");
+    console.log("cadena" || "Valor de la derecha");
+    console.log(19 || "Valor de la derecha");
+    console.log([] || "Valor de la derecha");
+    console.log({} || "Valor de la derecha");
+    console.log(false || "Valor de la derecha");
+    console.log(null || "Valor de la derecha");
+    console.log(undefined || "Valor de la derecha");
+    console.log("" || "Valor de la derecha");
+    console.log(-2 || "Valor de la derecha");
+    console.log(0 || "Valor de la derecha");
+
+    //AND
+    console.log("--- AND ---");
+    console.log("cadena" && "Valor de la derecha");
+    console.log(19 && "Valor de la derecha");
+    console.log([] && "Valor de la derecha");
+    console.log({} && "Valor de la derecha");
+    console.log(false && "Valor de la derecha");
+    console.log(null && "Valor de la derecha");
+    console.log(undefined && "Valor de la derecha");
+    console.log("" && "Valor de la derecha");
+    console.log(-2 && "Valor de la derecha");
+    console.log(0 && "Valor de la derecha");
+    */
+
+
+
+    /*30
+    //Alert, Confirm, Prompt
+    console.log(window);
+    //window.alert("Hola esto es una alerta");
+    //window.confirm("Hola esto es una confirmación");
+    //window.prompt("Hola esto es un aviso y le permite al usuario ingresar un valor");
+
+    //alert("Hola esto es una alerta");
+    //confirm("Hola esto es una confirmación");
+    //prompt("Hola esto es un aviso y le permite al usuario ingresar un valor");
+
+    let alerta = alert("Hola esto es una alerta");
+    let confirmacion = confirm("Hola esto es una confirmación");
+    let aviso = prompt("Hola esto es un aviso y le permite al usuario ingresar un valor");
+
+    console.log(alerta);
+    console.log(confirmacion);
+    console.log(aviso);
+    */
+
+
+
+    /*31
+    //Expresiones Regulares
+
+    let cadena = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias necessitatibus reiciendis iste mollitia perspiciatis asperiores incidunt quos, voluptatum, sed harum 6quas voluptas vero lorem voluptatibus sint cumque eligendi inventore? Quasi, commodi."
+
+    //let expReg = new RegExp("lorem", "ig");
+
+    //let expReg2 = /lorem/ig;
+
+    //Método 1
+    //console.log(expReg.test(cadena));
+    //Método 2
+    // console.log(expReg.exec(cadena));
+
+    // console.log(expReg2.test(cadena));
+    //console.log(expReg2.exec(cadena));
+
+    let expReg2 = /lorem{3,}/ig;
+    console.log(expReg2.test(cadena));
+    console.log(expReg2.exec(cadena));
+    */
+
+
+
+    /*32
+    //Funciones Anónimas Autoejecutables
+    //Immediately - invoked Function Expressions(IIFE)
+    (function () {
+        console.log("Mi primer IIFE");
+    })();
+
+    (function (d, w, c) {
+        console.log("Mi segundo IIFE");
+        console.log(d);
+        console.log(w);
+        c.log("Este es un console.log");
+    })(document, window, console);
+
+    //Formas de escribir las funciones Anónimas Autoejecutables
+
+    //Clásica
+    (function () {
+        console.log("Versión Clásica");
+    })();
+
+    //Crockford (JavaScript The God Parts)
+    ((function () {
+        console.log("Versión Crockford");
+    })());
+
+    //Unaria
+    +function () {
+        console.log("Versión Unaria");
+    }();
+
+    //Facebook
+    !function () {
+        console.log("Versión Facebook");
+    }();
+    */
+
+</script>
+
+
+<body>
+
+</body>
+
+</html>
