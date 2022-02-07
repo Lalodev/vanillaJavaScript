@@ -36,14 +36,14 @@ document.write("<h2>Hola Mundo desde el DOM</h2>");*/
 // 62. DOM - Nodos, Elementos y Selectores
 
 // Ya no
-/*console.log(document.getElementsByTagName("li")); 
+/*onsole.log(document.getElementsByTagName("li")); 
 console.log(document.getElementsByClassName("card")); 
 console.log(document.getElementsByName("nombre")); 
 //Este si se sigue utilizando, es más rapido
-console.log(document.getElementById("menu"));
+console.log(document.getElementById("menu"));*/
 
 //Reemplazados por querySelector
-console.log(document.querySelector("#menu"));
+/*console.log(document.querySelector("#menu"));
 console.log(document.querySelector("a"));
 console.log(document.querySelectorAll("a"));
 console.log(document.querySelectorAll("a").length);
@@ -52,7 +52,7 @@ console.log(document.querySelector(".card"));
 console.log(document.querySelectorAll(".card"));
 console.log(document.querySelectorAll(".card")[2]);
 console.log(document.querySelector("#menu li"));
-console.log(document.querySelectorAll("#menu li"));*/ 
+console.log(document.querySelectorAll("#menu li"));*/
 
 
 
@@ -586,8 +586,6 @@ $btnAbrir.addEventListener("click", e => {
 $btnCerrar.addEventListener("click", e => {
     //window.close();
     ventana.close();
-
-
 });
 
 $btnImprimir.addEventListener("click", e => {
